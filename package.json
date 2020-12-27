@@ -1,0 +1,24 @@
+{
+  "name": "arduino_remote",
+  "version": "1.0.0",
+  "description": "It is a small project to simulate action for keyboard with Arduino kit.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YiTzeng/arduino_remote.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YiTzeng/arduino_remote/issues"
+  },
+  "homepage": "https://github.com/YiTzeng/arduino_remote#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "robotjs": "^0.6.0",
+    "socket.io": "^3.0.4"
+  }
+}
