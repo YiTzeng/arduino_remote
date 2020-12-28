@@ -2,7 +2,7 @@
   "name": "arduino_remote",
   "version": "1.0.0",
   "description": "It is a small project to simulate action for keyboard with Arduino kit.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
