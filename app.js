@@ -23,7 +23,7 @@
 // })
 
 var net = require('net')
-const port = 80;
+const port = 8080;
 const host = '127.0.0.1';
 
 const server = net.createServer(onClientConnection);
@@ -35,7 +35,8 @@ server.listen(port, ()=>{
 function onClientConnection(socket){
     console.log(`${socket.remoteAddress}:${socket.remotePort} Conncted`);
     socket.on('data', (data)=>{
-        socket.write(`received: "${data}"`);
+        console.log(`Received: ${data}`)
+        socket.write(`true`);
     })
     socket.on('close', ()=>{
         console.log("Connection Terminated")
