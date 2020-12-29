@@ -6,6 +6,7 @@ int videoController = 2;
 int volumeDial = A0;
 int volumeVal;
 int volume;
+int tcpStop = 3;
 //TCP Parameter
 String tcpIp = "\"10.0.0.37\"";
 String netType = "\"TCP\"";
@@ -67,10 +68,11 @@ void setup(){
     pinMode(greenRGB,OUTPUT);
     pinMode(videoController,INPUT);
     pinMode(volumeDial,INPUT);
-    Serial.begin(9600);
-    Serial.setTimeout(1500);
+    pinMode(tcpStop,INPUT);
+//    Serial.begin(9600);
+    Serial1.setTimeout(1500);
     Serial1.begin(115200);
-    while(!Serial1 || !Serial){
+    while(!Serial1){
       digitalWrite(redLed, HIGH);
       analogWrite(redRGB, 20);
     }
@@ -82,6 +84,7 @@ void setup(){
 ////////////////LOOP////////////////
 void loop(){
   int newVolume = map(analogRead(volumeDial), 0, 1023, 0, 80);
+   delay(100);
   if(volume != newVolume){
     volume = newVolume;
     sendMsg(String(volume));
@@ -91,6 +94,10 @@ void loop(){
       sendMsg("video");
       delay(300);
    }
-   delay(100);
+  if(!digitalRead(tcpStop)){
+      diconnect2socket();
+      delay(300);
+   }
+  
   
 }
