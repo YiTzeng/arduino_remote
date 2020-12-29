@@ -22,7 +22,9 @@
 //   console.log(`Example app listening at http://localhost:${port}`)
 // })
 
-var net = require('net')
+var robot = require("robotjs");
+var net = require('net');
+var volume = 0;
 const port = 8080;
 const host = '127.0.0.1';
 
@@ -37,6 +39,7 @@ function onClientConnection(socket){
     socket.on('data', (data)=>{
         console.log(`Received: ${data}`)
         socket.write(`true`);
+        keyboard((data).toString());
     })
     socket.on('close', ()=>{
         console.log("Connection Terminated")
@@ -44,4 +47,25 @@ function onClientConnection(socket){
     socket.on('error', (error)=>{
         console.error(`Error occur: ${error}`);
     })
+}
+
+function keyboard(cmd){
+    console.log(`keyboard function : ${cmd}`)
+    switch (cmd) {
+        case "space":
+            robot.keyTap("space");
+        case "f":
+            robot.keyTap("f");
+        default:
+            volume_now = parseInt(cmd);
+            while(volume_now > volume){
+                volume++;
+                robot.keyTap("audio_vol_up");
+            }
+            while(volume_now < volume){
+                volume--;
+                robot.keyTap("audio_vol_down");
+            }
+            break;
+    }
 }
