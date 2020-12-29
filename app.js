@@ -1,44 +1,18 @@
-// const express = require('express')
-// const app = express()
-// var http = require('http').createServer(app);
-// var robot = require('robotjs');
-// var io = require('socket.io')(http);
-// const port = 3000
-
-// // var io = require('socket.io')(http);
-// // io.on('connection', (socket)=>{
-// //     console.log('User connected');
-// // })
-// app.get('/', (req, res) => {
-//     res.sendFile(__dirname + '/index.html');
-//   });
-// io.on('connection', (socket) => {
-//   console.log('a user connected');
-//   socket.on('disconnect', () => {
-//     console.log('user disconnected');
-//   });
-// });
-// http.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`)
-// })
-
-var robot = require("robotjs");
+var robot = require("robotjs"); //simulate keyboard action from http://robotjs.io/
 var net = require('net');
 var volume = 0;
 const port = 8080;
-const host = '127.0.0.1';
 
 const server = net.createServer(onClientConnection);
 
 server.listen(port, ()=>{
-    console.log(`listening on port ${port} at ${host}`)
+    console.log(`listening on port ${port} ...`)
 })
 
 function onClientConnection(socket){
     console.log(`${socket.remoteAddress}:${socket.remotePort} Conncted`);
     socket.on('data', (data)=>{
-        console.log(`Received: ${data}`)
-        socket.write(`true`);
+        socket.write('true');
         keyboard((data).toString());
     })
     socket.on('close', ()=>{
@@ -50,12 +24,13 @@ function onClientConnection(socket){
 }
 
 function keyboard(cmd){
-    console.log(`keyboard function : ${cmd}`)
     switch (cmd) {
         case "space":
             robot.keyTap("space");
+            break;
         case "f":
             robot.keyTap("f");
+            break;
         default:
             volume_now = parseInt(cmd);
             while(volume_now > volume){
