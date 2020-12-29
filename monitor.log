@@ -1,0 +1,186 @@
+AT+CWJAP="CGNM-88B8","251183006782"
+
+WIFI CONNECTED
+WIFI GOT IP
+
+OK
+AT+CWQAP
+
+
+OK
+WIFI DISCONNECT
+AT+CWMODE?
+
++CWMODE:1
+
+OK
+AT+CIPSTART=?
+
++CIPSTART:(id)("type"),("ip address"),(port)
++CIPSTART:((id)"type"),("domain name"),(port)
+
+OK
+AT+CIPSTART = <TCP>,<10.0.0.37>,<80>
+
+
+ERROR
+AT+CIPSTART = (TCP),(10.0.0.37),(80)
+
+
+ERROR
+AT+CIPSTART = (TCP,10.0.0.37,80)
+
+
+ERROR
+AT+CIPSTART = "TCP","10.0.0.37","80"
+
+
+ERROR
+AT+CIPSTART="TCP","10.0.0.37","80"
+
+no ip
+
+ERROR
+AT+CWJAP="CGNM-88B8","251183006782"  
+
+
+ERROR
+AT+CWJAP="CGNM-88B8","251183006782"
+
+WIFI CONNECTED
+WIFI GOT IP
+
+OK
+AT+CIPSTART="TCP","10.0.0.37","80"
+
+
+ERROR
+AT+CIPSTART="TCP","10.0.0.37","80"
+
+
+ERROR
+AT+CIPSTART="TCP","10.0.0.37",80
+
+CONNECT
+
+OK
+AT+ CIPMUX?
+
+
+ERROR
+AT+CIPSTATUS
+
+STATUS:3
++CIPSTATUS:0,"TCP","10.0.0.37",80,41350,0
+
+OK
+AT+CIPSEND=4
+
+
+OK
+> 
+
+busy s...
+
+Recv 4 bytes
+
+SEND OK
+
++IPD,16:received: "test"AT+CIPSEND=1
+
+
+OK
+> 
+
+busy s...
+
+Recv 1 bytes
+
+SEND OK
+AT+CIPSEND=1
+
+
+OK
+> 
+
+busy s...
+
+Recv 1 bytes
+
+SEND OK
+AT+CIPSEND=4
+
+
+OK
+> 
+
+busy s...
+
+Recv 4 bytes
+
+SEND OK
+
++IPD,13:received: "a"
++IPD,17:received: "atese"CLOSED
+AT+CIPSEND=1
+
+link is not valid
+
+ERROR
+AT+CIPSTART="TCP","10.0.0.37",80
+
+CONNECT
+
+OK
+AT+CIPSEND=1
+
+
+OK
+> 
+
+busy s...
+
+Recv 1 bytes
+
+SEND OK
+
++IPD,13:received: "a"AT+CIPSEND=1
+
+
+OK
+> 
+
+busy s...
+
+Recv 1 bytes
+
+SEND OK
+
++IPD,13:received: "s"AT+CIPCLOSE
+
+CLOSED
+
+OK
+AT+CIPSTART="TCP","10.0.0.37",80
+
+CONNECT
+
+OK
+AT+CIPSEND=1
+
+
+OK
+> 
+
+busy s...
+
+Recv 1 bytes
+
+SEND OK
+
++IPD,13:received: "a"AT+CIPCLOSE
+
+CLOSED
+
+OK
+
