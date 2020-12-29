@@ -2,20 +2,27 @@
 It is a small project to simulate action for keyboard with Arduino kit.
 
 Arduino badges:
+
     Arduino Leonardo
+
     Arduino 321 Maker shield
+
     16x2 LCD
+
     esp8266
 
 Background:
+
     I found that it is hard to control my laptop wirelessly without a bluetooth mouse or a keyboard. I happened to have some Arduino kits which I bought for my course. The Arduino kit did not come with Bluetooth module so that I decided to use the esp866 the conduct wireless communication.
 
 Setup:
+
     Laptop, Windows 10 operated, runs a socket server over TCP on a specified port
     
     Arduino Leonardo, configured as socket client over TCP on a specified port
 
 Features:
+
     Rotate the dial on the board to adjust audio volume
 
     Press swith 1 to start or pause the video
