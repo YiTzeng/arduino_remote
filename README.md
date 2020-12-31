@@ -1,6 +1,10 @@
 # arduino_remote
 It is a small project to simulate action for keyboard with Arduino kit.
 
+Demo:
+    
+    Youtube: https://www.youtube.com/watch?v=AO0TL2SNGiU
+
 Arduino badges:
 
     Arduino Leonardo
@@ -13,7 +17,7 @@ Arduino badges:
 
 Background:
 
-    I found that it is hard to control my laptop wirelessly without a bluetooth mouse or a keyboard. I happened to have some Arduino kits which I bought for my course. The Arduino kit did not come with Bluetooth module so that I decided to use the esp866 the conduct wireless communication.
+    I found that it is hard to control the video on my laptop wirelessly without a bluetooth mouse or a keyboard. I happened to have an Arduino kit which I bought for my course 1 year ago. Given of COVID-19 and the budget, I did not want spend extra money to build this project. The kit did not come with a Bluetooth module so that I decided to use the esp866 the conduct the wireless communication over tcp in the private network.
 
 Setup:
 
@@ -44,3 +48,8 @@ Features:
     Connect to wifi & socket automatically
 
     Reconnect to wifi & socket automatically
+
+Used Library:
+    
+    robotjs
+        Link: http://robotjs.io
